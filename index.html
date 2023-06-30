@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Portfolio</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Samuel Kebede</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#portfolio">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main class="container">
+		<section id="about" class="py-5">
+			<div class="row">
+				<div class="col-md-6">
+					<h2>About Me</h2>
+					<p style="max-width: 800px;">Hey, my name is Samuel Kebede I am a Computer Science major at addis ababa college of natural and computer science university, And also pursuing additional learning opportunities through <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/">freecode.com</a>  and <a href="">udemy</a> . and I am passionate about becoming full stack web developer and is constantly seeking out new challenges to improve my skills and knowledge in the field as it's my passion to create a platform that's a user-friendly for users.</p>
+				</div>
+				<div class="col-md-6">
+					<img src="sam.jpg" alt="Profile Picture" class="profile-image">
+				</div>
+			</div>
+		</section>
+		<section id="portfolio" class="py-5">
+			<h2>Portfolio</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card mb-3">
+						<img src="todo.png" class="card-img-top" alt="Todo-App">
+						<div class="card-body">
+							<h3 class="card-title">Todo App</h3>
+							<p class="card-text">It's an app that allows the user to make a list of tasks he/she need to complete or things they want to do. Traditionally,they are written on a piece of paper or post it notes act as a memory aid. As technology has evolved we have been able to create a todo list with excel spreadsheets, word documents, email lists, todo list apps.one of the most important reasons you should use a to do list is that it helps to stay organized.</p>
+							<a href="https://github.com/samuel2312/Todo-App" class="btn btn-primary">View Project</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card mb-3">
+						<img src="product.jpg" class="card-img-top" alt="Ecommerce">
+						<div class="card-body">
+							<h3 class="card-title">Ecommerce</h3>
+							<p class="card-text">Shopping is the act of purchasing goods or services, which can be a leisure activity or a necessity, and can be done in person or online through the internet. I t is the integral part of modern life, and a key aspect of the economy in many countries around the world <br>
+                                Our ecommerce website have the following features <br>
+                                1.Customers will be able to easily browse and search for products within the software. The software also includes features such as product reviews and rating. <br>
+                                2.The software will provide checkout process <br>
+                                3.The software will provide for creating saving of wishlists or shoping lists as well as watching of order history.  
+                            </p>
+							<a href="https://github.com/samuel2312/ecommerce" class="btn btn-primary">View Project</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="py-5">
+			<h2>Contact Me</h2>
+            <div class="me">
+                <p>Feel free to get in touch:</p>
+                <ul>
+                    <li>E-mail:samuelkebede85@gmail.com</li>
+                    <li>phone:+251920997069</li>
+                </ul>
+            </div>
+            
+			<form id="myForm">
+                <div class="container">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" onclick="submitForm(event)">Submit</button>
+                    
+                </div>
+				
+			</form>
+		</section>
+	</main>
+	<footer style="background-color: linear-gradient(145deg, #1e1919, #191515);" class="bg-dark text-white py-3">
+		<div style="background-color:#20232e;" class="container text-center">
+			<p style="color: rgb(152, 140, 140);">&copy; samuel kebede 2023 </p>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let myForm = document.getElementById("myForm");
+
+        myForm.addEventListener("submit", (e) => {
+         e.preventDefault();
+
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let message = document.getElementById("message");
+
+        if (name.value == "" || email.value == "") {
+            alert("Ensure you input a value in both fields!");
+        } else {
+            // perform operation with form input
+            alert("This form has been successfully submitted!");
+            console.log(
+            `This form has a Name of ${name.value} and E-mail of ${email.value}`
+            );
+
+            name.value = "";
+            email.value = "";
+        }
+        });
+    </script>
+</body>
+</html>
+
